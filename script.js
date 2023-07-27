@@ -43,3 +43,18 @@ const findMostFrequentElement = (arr) => {
 
     return mostFrequentElement;
 };
+
+// Task 4: Create a function that takes a sorted array of numbers and a target value as input. The function should find two numbers in the array that add up to the target value. Return an array containing the indices of the two numbers.
+
+const findTwoNumbersWithSum = (arr, target) => {
+    for (let left = 0; left < arr.length - 1; left++) {
+        for (let right = left + 1; right < arr.length; right++) {
+            const sum = arr[left] + arr[right];
+            if (sum === target) {
+                return [left, right];
+            }
+        }
+    }
+
+    return null; // If no such pair is found, return null
+};
